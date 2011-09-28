@@ -2,7 +2,7 @@
 import os, sys
 
 here = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(here, 'tg2app'))
+sys.path.insert(0, os.path.join(here, 'wrappedapp'))
 virtenv = os.environ.get('APPDIR', '') + '/virtenv/'
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
@@ -12,7 +12,7 @@ except IOError:
     pass
 
 from paste.deploy import loadapp
-application = loadapp('config:production.ini', relative_to=os.path.join(here, 'tg2app'))
+application = loadapp('config:production.ini', relative_to=os.path.join(here, 'wrappedapp'))
 
 #
 # Below for testing only
