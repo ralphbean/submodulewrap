@@ -1,0 +1,3 @@
+[submodule "wsgi/wrappedapp"]
+	path = wsgi/wrappedapp
+	url = git://github.com/ralphbean/wrappedapp.git
